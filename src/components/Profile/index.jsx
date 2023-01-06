@@ -11,8 +11,19 @@ import ToolbarContainer from "../common/ToolbarContainer";
 import Input from "../common/Input";
 import PrimaryButton from "../common/PrimaryButton";
 import AvatarImg from "../../images/Avatar(dp).png";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Fade from "@mui/material/Fade";
 function Profile({ mobile = "" }) {
   const theme = useTheme();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   return (
     <ToolbarContainer
       children={
@@ -40,8 +51,13 @@ function Profile({ mobile = "" }) {
               alignItems: "center",
             }}
           >
-            <Box sx={{ p: 1 }}>
+            <Box sx={{ p: 1, cursor: "pointer" }}>
               <Badge
+                id="fade-button"
+                aria-controls={open ? "fade-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+                onClick={handleClick}
                 overlap="circular"
                 anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
                 badgeContent={
@@ -59,6 +75,19 @@ function Profile({ mobile = "" }) {
               >
                 <Avatar sx={{ width: 100, height: 100 }} alt="Travis Howard" src={AvatarImg} />
               </Badge>
+              <Menu
+                id="fade-menu"
+                MenuListProps={{
+                  "aria-labelledby": "fade-button",
+                }}
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                TransitionComponent={Fade}
+              >
+                <MenuItem onClick={handleClose}>Upload New</MenuItem>
+                <MenuItem onClick={handleClose}>Remove</MenuItem>
+              </Menu>
             </Box>
             <Box
               sx={{

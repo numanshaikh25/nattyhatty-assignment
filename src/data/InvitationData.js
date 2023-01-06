@@ -39,7 +39,6 @@ export const sentData = [
   },
 ];
 
-// export const sentData = [
 //   {
 //     invitation: "true",
 //     bgColor: "#DEE8FF",
@@ -143,8 +142,6 @@ export const receivedData = [
   { image: AvatarImg, centerText: "You have invited johnsmith@gmail.com to become family member." },
 ];
 
-// export const receivedData = [
-//   {
 //     image: AvatarImg,
 //     bgColor: "#DEE8FF",
 //     centerElement: (

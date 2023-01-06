@@ -59,7 +59,7 @@ function Activities({ activityMobile = "" }) {
                     sx={{
                       borderLeft: "1px solid #E3E3E3",
                       height: "18px",
-                      width: "90%",
+                      ...(activityMobile === "mobile" ? { width: "90%" } : { width: "92%" }),
                       margin: "auto",
                       "&:last-child": {
                         border: "0",
