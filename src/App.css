@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+h5:after {
+  content: attr(data-text);
+  color: red;
+  transform: translateX(-100%);
+  position: absolute;
+}
