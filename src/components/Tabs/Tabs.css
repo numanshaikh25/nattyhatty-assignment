@@ -11,7 +11,8 @@
   position: relative;
   border-radius: 35px;
   overflow: hidden;
-  background: #fff;
+  /* background: #fff; */
+  background: #dbdbdb;
   height: 35px;
   user-select: none;
 }
@@ -48,6 +49,7 @@
 .tab-slider--trigger.active {
   color: #fff;
   background: #f8991f;
+  border-radius: 25px !important;
 }
 .MuiBox-root.css-19kzrtu {
   padding: 13.8px !important;
