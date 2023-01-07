@@ -4,7 +4,7 @@ import PrimaryButton from "./common/PrimaryButton";
 import Alert from "@mui/material/Alert";
 import Typography from "@mui/material/Typography";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-function Header({ title = "", alert = "", buttonText = "", className = "" }) {
+function Header({ title = "", alert = "", buttonText = "", className = "", mobile = "" }) {
   return (
     <div>
       <Box
@@ -29,7 +29,7 @@ function Header({ title = "", alert = "", buttonText = "", className = "" }) {
             <PrimaryButton color={"#232e3e"} text={buttonText}></PrimaryButton>
           </Box>
         )}
-        {className == "mobile" && (
+        {mobile === "mobile" && (
           <Box>
             <MoreHorizIcon />
           </Box>
