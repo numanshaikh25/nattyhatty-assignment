@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
+import { useTheme } from "@mui/material/styles";
 
 const ToolbarContainer = ({
   className = "",
@@ -10,6 +11,7 @@ const ToolbarContainer = ({
   activityMobile = "",
   invitationMobile = "",
 }) => {
+  const theme = useTheme();
   return (
     <Box
       className={`toolbarContainer ${className}`}
@@ -36,6 +38,15 @@ const ToolbarContainer = ({
           marginTop: "0.5rem",
           ...(className === "scrollable" && { maxHeight: "20.5rem", overflowX: "auto" }),
           ...(mobile === "mobile" && { maxHeight: "15.25rem", overflowX: "auto" }),
+          ...(title === "Activities" && {
+            [theme.breakpoints.up("md")]: {
+              maxHeight: "20.5rem",
+              overflow: "hidden",
+            },
+            [theme.breakpoints.up("lg")]: {
+              maxHeight: "56.5rem",
+            },
+          }),
         }}
       >
         {children}
